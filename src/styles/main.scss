@@ -47,6 +47,7 @@ html {
 	width: 100%;
 	height: 100%;
 }
+
 .skip-link {
 	position: absolute;
 	top: -40px;
@@ -59,9 +60,7 @@ html {
 		top: 0;
 	}
 }
-#drawer_column {
-	display: none;
-}
+
 #drawer {
 	width: 190px;
 	position: absolute;
@@ -92,13 +91,15 @@ html {
 	transform: translate(0,150px);
 }
 #hamburger {
-	display: inline-block;
-	width: 44px;
-	height: 44px;
-	font-size: 38px;
+	display: block;
+	padding: 20px;
+	font-size: 40px;
 	text-decoration: none;
 	color: $color_2;
-	margin: 20px;
+	background: none;
+	color: white;
+	border: none;
+	cursor: pointer;
 }
 .header {
 	background-color: $background-color_3;
@@ -106,15 +107,57 @@ html {
 	transition: min-height 0.3s;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: left;
+	position: sticky;
+	top: 0;
+	z-index: 99;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
+.app-bar__menu {
+	display: flex;
+	align-items: center;
+  }
+
 .header__title {
 	font-weight: 300;
-	font-size: 2em;
-	padding: 24px;
+	font-size: 3em;
 	display: inline-block;
 	color: $color_2;
 }
+.header .app-bar__navigation {
+	position: absolute;
+	top: 100px;
+	left: -180px;
+	width: 150px;
+	transition: all 0.3s;
+	padding: 8px;
+	background-color: white;
+	overflow: hidden;
+	background-color: rgba($color: #212121, $alpha: .5);
+	border-radius: 10px;
+  }
+.header .app-bar__navigation.open {
+	left: 0;
+  }
+
+.header .app-bar__navigation ul li a {
+	font-family: inherit;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+	padding: 8px;
+	margin-bottom: 5px;
+	width: 100%;
+	background-color: rgba($color: #424242, $alpha: .5);
+	border-radius: 2px;
+	padding: 10px;
+	transition: ease-in-out 100ms;
+  }
+
+  .header .app-bar__navigation ul li a:hover{
+	background-color: rgba($color: #424242, $alpha: 1);
+  }
 .hero {
 	display: flex;
 	align-items: center;

@@ -1,13 +1,10 @@
+import 'regenerator-runtime'; 
 import '../styles/main.scss';
 import '../styles/responsive.scss'
-import 'regenerator-runtime'; 
+import App from './views/app';
 
-console.log('Hello Coders! :)');
-
-const hamburgerButtonElement = document.querySelector('#hamburger');
-const drawerElement = document.querySelector('#drawer');
- 
-hamburgerButtonElement.addEventListener('click', event => {
-  drawerElement.classList.toggle('open');
-  event.stopPropagation();
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('#navigationDrawer'),
+  content: document.querySelector('#mainContent'),
 });
