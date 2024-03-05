@@ -3,26 +3,19 @@ $color_2: #616161;
 $background-color_1: #212121;
 
 @media screen and (min-width: 480px) {
-	.ratings {
-		top: -200px;
-		font-size: 24px;
-		width: 100px;
+	.content {
+		margin: 20px;
+		padding: 32px;
+		border: #dfdfdf 6px;
+		border-style: solid;
+		border-radius: 10px;
+		background-color: white;
+	
 	}
 	.posts {
-		justify-content: center;
 		flex-direction: row;
 		flex-wrap: wrap;
 		gap: 20px;
-	}
-	.post-item__title {
-		font-size: 25px;
-	}
-	.post-item__city {
-		font-size: large;
-	}
-	.post-item__description {
-		font-weight: 300;
-		font-size: 17px;
 	}
 	section {
 		h2 {
@@ -36,6 +29,30 @@ $background-color_1: #212121;
 @media screen and (min-width: 768px) {
 	#drawer_column {
 		display: block;
+	}
+	.content {
+		margin: 40px;
+		padding: 32px;
+		border: #dfdfdf 10px;
+		border-style: solid;
+		border-radius: 15px;
+		background-color: white;
+	
+	}
+	section {
+		h2 {
+			font-size: 30px;
+			padding-bottom: 10px;
+		}
+	}
+	.posts {
+		gap: 25px;
+	}
+	.post-item {
+		max-width: 300px;
+	}
+	.post-item__description{
+		font-size: 14px;
 	}
 	.header__title {
 		font-size: 30px;
@@ -71,8 +88,66 @@ $background-color_1: #212121;
 			padding: 20px;
 		}
 	}
+	.information{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.information__image {
+		max-width: 600px;
+		
+	}
+	.information__name{
+		font-size: 45px;
+	}
+	.information__address{
+		font-size: 20px;
+	}
+	.information__description{
+		font-size: 15px;
+	}
+	.information-menu__tag{
+		width: 250px;
+	}
+	.review-form{
+		max-width: 700px;
+		margin: auto;
+		margin-top: 20px;
+	}
+	label{
+		margin: auto;
+	}
+	input[type=text], select {
+		width: 60%;
+		margin: auto;
+	  }
+	input[type=submit] {
+	  width: 60%;
+	  margin: auto;
+	}
 }
 @media screen and (min-width: 1200px) {
+	section {
+		h2 {
+			font-size: 35px;
+			padding-bottom: 15px;
+		}
+	}
+	.posts{
+		gap: 30px;
+	}
+	.post-item{
+		max-width: 330px;
+	}
+	.ratings{
+		font-size: 20px;
+	}
+	.post-item__city{
+		font-size: 20px;
+	}
+	.post-item__description{
+		letter-spacing: 1px;
+	}
 	.nav__item {
 		a {
 			display: inline-block;
@@ -83,4 +158,86 @@ $background-color_1: #212121;
 	.header__title {
 		font-size: 36px;
 	}
+	.information{
+		flex-direction: row;
+		gap: 20px;
+	}
+	.information-text{
+		max-width: 50%;
+		padding: 20px;
+	}
+	.information__name{
+		text-align: left;
+
+	}
+	.information__address{
+		text-align: left;
+	}
+	.information__description{
+		text-align: left;
+		padding: 0;
+	}
+	.information-menu{
+		display: flex;
+		justify-content: space-evenly;
+	}
+	.review-title{
+		display: none;
+	}
+	.review{
+		display: flex;
+		gap: 50px;
+		justify-content: space-evenly;
+	}
+	.review-form{
+		
+	}
+	#review-form__name{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	#review-form__description{
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+input[type=text], select {
+	font-size: 20px;
+  }
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 1px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+input[type=submit] {
+	width: 100%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+  }
+  
+input[type=submit]:hover {
+background-color: #45a049;
+}
+label{
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+
+
 }
