@@ -28,9 +28,6 @@ $background-color_1: #212121;
 	
 }
 
-@media screen and (min-width: 650px) {
-
-}
 
 @media screen and (min-width: 768px) {
 	.header{
@@ -136,10 +133,13 @@ $background-color_1: #212121;
 	.information-menu__tag{
 		width: 250px;
 	}
+	.review{
+		justify-content: center;
+	}
 	.review-form{
-		max-width: 700px;
 		margin: auto;
 		margin-top: 20px;
+		width: 60%;
 	}
 	label{
 		margin: auto;
@@ -197,16 +197,11 @@ $background-color_1: #212121;
 		max-width: 50%;
 		padding: 20px;
 	}
-	.information__name{
-		text-align: left;
 
-	}
-	.information__address{
-		text-align: left;
-	}
 	.information__description{
-		text-align: left;
+		margin: auto;
 		padding: 0;
+		max-width: 85%;
 	}
 	.information-menu{
 		display: flex;
@@ -215,10 +210,15 @@ $background-color_1: #212121;
 	.review-title{
 		display: none;
 	}
+	.review-form{
+		margin: 0;
+		margin-top: 20px;
+		width: 60%;
+	}
 	.review{
 		display: flex;
 		gap: 50px;
-		justify-content: space-evenly;
+		justify-content: center;
 	}
 	#review-form__name{
 		margin-top: 0;
@@ -231,23 +231,9 @@ $background-color_1: #212121;
 input[type=text], select {
 	font-size: 20px;
   }
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 1px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
 input[type=submit] {
 	width: 100%;
-	background-color: #4CAF50;
 	color: white;
 	padding: 14px 20px;
 	margin: 8px 0;
@@ -258,9 +244,6 @@ input[type=submit] {
 	font-weight: bold;
   }
   
-input[type=submit]:hover {
-background-color: #45a049;
-}
 label{
 	margin-bottom: 0;
 	margin-top: 0;
