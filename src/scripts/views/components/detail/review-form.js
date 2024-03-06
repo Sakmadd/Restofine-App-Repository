@@ -1,5 +1,5 @@
-const createReviewForm = ()=>{
-    return `
+const createReviewForm = () => {
+  return `
     <form tabindex="0" class="review-form">
     <h2>have you ever been here?</h2>
     <label for="review-form__name">Name</label>

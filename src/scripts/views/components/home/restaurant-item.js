@@ -1,13 +1,13 @@
-import CONFIG from "../../../globals/config"
+import CONFIG from '../../../globals/config'
 
 class RestaurantItem extends HTMLElement {
-    set restaurant(restaurant){
-        this._restaurant = restaurant
-        this.render()
-    }
+  set restaurant (restaurant) {
+    this._restaurant = restaurant
+    this.render()
+  }
 
-    render(){
-        this.innerHTML = `
+  render () {
+    this.innerHTML = `
         <article class="post-item">
               <div class="post-item__thumbnail">
                 <h3 class="ratings" tabindex="0">★ ${this._restaurant.rating}</h3>
@@ -24,7 +24,7 @@ class RestaurantItem extends HTMLElement {
               </div>
             </article>
         `
-    }
-} 
+  }
+}
 
-customElements.define('restaurant-item', RestaurantItem);
+customElements.define('restaurant-item', RestaurantItem)

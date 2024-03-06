@@ -1,9 +1,9 @@
 const Favorited = {
-    async render(){
-        
-    },
-    async afterRender(){
+  async render () {
 
-    }
+  },
+  async afterRender () {
+
+  }
 }
 export default Favorited
