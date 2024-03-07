@@ -27,6 +27,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -40,8 +41,7 @@ module.exports = {
       ],
     }),
     new WorkboxWebpackPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
+      swDest: './sw.bundle.js',
       runtimeCaching: [
         {
           urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
@@ -51,18 +51,13 @@ module.exports = {
           },
         },
         {
-          urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/images/medium/'),
+          urlPattern: ({ url }) => url.href.startsWith('https://image.tmdb.org/t/p/w500/'),
           handler: 'StaleWhileRevalidate',
           options: {
             cacheName: 'restofine-image-api',
           },
         },
       ],
-      navigateFallback: '/index.html',
-      navigateFallbackDenylist: [
-      ],
-      swDest: 'sw.js', 
-
     }),
   ],
 };
