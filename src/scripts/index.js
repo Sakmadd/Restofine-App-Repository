@@ -7,6 +7,7 @@ import './views/components/detail/information-menu'
 import './views/components/detail/information-text'
 import './views/components/detail/reviews-customer'
 import './views/components/detail/restaurant-detail'
+import './views/components/detail/like-button'
 
 import App from './views/app'
 import swRegister from './utils/sw-register'

@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "focus-trap": "^7.5.4",
+    "idb": "^8.0.0",
     "regenerator-runtime": "^0.14.1",
     "workbox-window": "^7.0.0"
   }
