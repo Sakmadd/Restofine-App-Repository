@@ -123,6 +123,7 @@ html {
 	font-size: 3em;
 	display: inline-block;
 	color: $color_2;
+	padding: 2px;
 }
 .header .app-bar__navigation {
 	position: absolute;
@@ -254,7 +255,9 @@ section {
 		opacity: 0.5;
 	}
 	a {
-		font-size: 26px;
+		padding-top: 6px;
+		padding-bottom: 6px;
+		font-size: 27px;
 		display: block;
 		text-decoration: none;
 		color: $color_5;
@@ -304,7 +307,7 @@ section {
 
 .information__image{
 	width: 100%;
-	border-radius: 3px;
+	border-radius: 10px;
 
 	filter: grayscale(.2);
 	
