@@ -6,10 +6,10 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "serve": "http-server dist",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint ./src",
+    "serve": "http-server dist --port 8080",
     "lint-fix": "eslint --fix ./src"
   },
   "keywords": [],
@@ -42,10 +42,12 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.10.0",
-    "whatwg-fetch": "^3.6.2"
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
     "focus-trap": "^7.5.4",
-    "regenerator-runtime": "^0.14.1"
+    "regenerator-runtime": "^0.14.1",
+    "workbox-window": "^7.0.0"
   }
 }
