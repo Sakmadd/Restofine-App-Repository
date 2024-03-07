@@ -12,11 +12,17 @@ const Favorited = {
   },
   async afterRender () {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants()
-    const containerSpace = document.querySelector('.posts')
-    const restaurantContainer = document.createElement('restaurant-container')
-    restaurantContainer.restaurants = restaurants
+    const emptySignSpace = document.querySelector('.content')
+    console.log(restaurants)
+    if (restaurants.length === 0) {
+      emptySignSpace.innerHTML = '<h2>You haven\'t favorite any restaurants yet 😔 </h2>'
+    } else {
+      const containerSpace = document.querySelector('.posts')
+      const restaurantContainer = document.createElement('restaurant-container')
+      restaurantContainer.restaurants = restaurants
 
-    containerSpace.appendChild(restaurantContainer)
+      containerSpace.appendChild(restaurantContainer)
+    }
   }
 }
 export default Favorited

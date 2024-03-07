@@ -27,7 +27,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -41,7 +40,8 @@ module.exports = {
       ],
     }),
     new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js',
+      clientsClaim: true,
+      skipWaiting: true,
       runtimeCaching: [
         {
           urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev'),
@@ -58,6 +58,11 @@ module.exports = {
           },
         },
       ],
+      navigateFallback: '/index.html',
+      navigateFallbackDenylist: [
+      ],
+      swDest: 'sw.js', 
+
     }),
   ],
 };
