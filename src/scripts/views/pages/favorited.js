@@ -1,4 +1,4 @@
-import FavoriteRestaurantIdb from "../../data/favouritedb-source";
+import FavoriteRestaurantIdb from '../../data/favouritedb-source'
 
 const Favorited = {
   async render () {
@@ -11,13 +11,12 @@ const Favorited = {
     `
   },
   async afterRender () {
-    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants()
     const containerSpace = document.querySelector('.posts')
     const restaurantContainer = document.createElement('restaurant-container')
     restaurantContainer.restaurants = restaurants
 
     containerSpace.appendChild(restaurantContainer)
-
   }
 }
 export default Favorited

@@ -21,18 +21,16 @@ const Detail = {
     const putMenu = document.querySelector('.information')
     const restaurantDetail = document.createElement('restaurant-detail')
 
-
-
     restaurantDetail.restaurant = result.restaurant
     putMenu.appendChild(restaurantDetail)
 
     const submitReviewButton = document.querySelector('#review-form__button')
-    reviewFormInitiator.init({restaurantId,submitReviewButton})
+    reviewFormInitiator.init({ restaurantId, submitReviewButton })
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant,
-    });
+      restaurant
+    })
   }
 }
 export default Detail

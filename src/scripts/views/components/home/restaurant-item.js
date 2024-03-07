@@ -1,7 +1,7 @@
 import CONFIG from '../../../globals/config'
 
 class RestaurantItem extends HTMLElement {
-  set restaurant(restaurant) {
+  set restaurant (restaurant) {
     this._restaurant = restaurant
     this.render()
   }
