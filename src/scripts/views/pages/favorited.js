@@ -13,7 +13,6 @@ const Favorited = {
   async afterRender () {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants()
     const emptySignSpace = document.querySelector('.content')
-    console.log(restaurants)
     if (restaurants.length === 0) {
       emptySignSpace.innerHTML = '<h2>You haven\'t favorite any restaurants yet 😔 </h2>'
     } else {
