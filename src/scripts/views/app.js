@@ -22,8 +22,15 @@ class App {
   async renderPage () {
     const url = UrlParser.parseActiveUrlWithCombiner()
     const page = routes[url]
+    const skipLinkElem = document.querySelector('.skip-link')
+
     this._content.innerHTML = await page.render()
     await page.afterRender()
+
+    skipLinkElem.addEventListener('click', (event) => {
+      event.preventDefault()
+      document.querySelector('#mainContent').focus()
+    })
   }
 }
 export default App
