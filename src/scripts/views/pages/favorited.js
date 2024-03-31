@@ -1,4 +1,4 @@
-import FavoriteRestaurantIdb from '../../data/favouritedb-source'
+import FavoriteRestaurantIndexedDB from '../../data/favRestaurantIndexedDB-source'
 
 const Favorited = {
   async render () {
@@ -11,7 +11,7 @@ const Favorited = {
     `
   },
   async afterRender () {
-    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants()
+    const restaurants = await FavoriteRestaurantIndexedDB.getAllRestaurants()
     const emptySignSpace = document.querySelector('.content')
     if (restaurants.length === 0) {
       emptySignSpace.innerHTML = '<h2>You haven\'t favorite any restaurants yet 😔 </h2>'

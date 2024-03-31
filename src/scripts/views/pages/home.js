@@ -1,4 +1,4 @@
-import RestaurantDbSource from '../../data/restaurantdb-source'
+import RestaurantDbSource from '../../data/restaurantDB-source'
 
 const Home = {
   async render () {

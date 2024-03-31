@@ -212,6 +212,7 @@ section {
 	}
 }
 .callToAction{
+	text-align: center;
 	text-decoration: none;
 	opacity: 0;
 	position: absolute;
@@ -258,9 +259,13 @@ section {
 	width: 100%;
 	background-color: $background-color_5;
 	transition: ease-in-out 500ms;
+	border-radius: 0 0 0 50px;
+	height: 200px;
+	object-fit: cover;
 }
 .post-item__thumbnail:hover .post-item__image {
 	filter: grayscale(15%) blur(2px) contrast(44%) drop-shadow(0px 0px 40px #000000);
+
 	
 }
 
@@ -271,9 +276,9 @@ section {
 .callToAction:hover{
 	opacity: 1;
 	display: block;
-	font-size: 17px;
 	background-color: #000000;
 	padding: 10px;
+	border-radius: 0px 20px 0px 20px;
 }
 
 .post-item__city {
@@ -294,7 +299,7 @@ section {
 	a {
 		padding-top: 6px;
 		padding-bottom: 6px;
-		font-size: 27px;
+		font-size: 28px;
 		display: block;
 		text-decoration: none;
 		color: $color_5;
@@ -317,7 +322,7 @@ section {
 	text-align: center;
 	padding: 3px 15px;
 	font-size: 15px;
-	display: inline-block;
+	display: block;
 	transition: ease-in-out 300ms;
 }
 .action-icon {

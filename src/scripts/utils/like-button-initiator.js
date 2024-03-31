@@ -1,4 +1,4 @@
-import FavoriteRestaurantIdb from '../data/favouritedb-source'
+import FavoriteRestaurantIndexedDB from '../data/favRestaurantIndexedDB-source'
 import createLikeButton from '../views/components/detail/like-button'
 import createLikedButton from '../views/components/detail/liked-button'
 
@@ -21,7 +21,7 @@ const LikeButtonInitiator = {
   },
 
   async _isRestaurantExist (id) {
-    const restaurant = await FavoriteRestaurantIdb.getRestaurant(id)
+    const restaurant = await FavoriteRestaurantIndexedDB.getRestaurant(id)
     return !!restaurant
   },
 
@@ -30,7 +30,7 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#likeButton')
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.putRestaurant(this._restaurant)
+      await FavoriteRestaurantIndexedDB.putRestaurant(this._restaurant)
       this._renderButton()
     })
   },
@@ -40,7 +40,7 @@ const LikeButtonInitiator = {
 
     const likeButton = document.querySelector('#likeButton')
     likeButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id)
+      await FavoriteRestaurantIndexedDB.deleteRestaurant(this._restaurant.id)
       this._renderButton()
     })
   }
