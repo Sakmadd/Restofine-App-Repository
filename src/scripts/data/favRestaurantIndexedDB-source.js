@@ -20,11 +20,18 @@ const FavoriteRestaurantIndexedDB = {
     return (await dbPromise).getAll(OBJECT_STORE_NAME)
   },
   async putRestaurant (restaurant) {
+    if (!this._isValidRestaurant(restaurant)) {
+      return
+    }
     return (await dbPromise).put(OBJECT_STORE_NAME, restaurant)
   },
   async deleteRestaurant (id) {
     return (await dbPromise).delete(OBJECT_STORE_NAME, id)
+  },
+  _isValidRestaurant (restaurant) {
+    return restaurant && typeof restaurant === 'object' && 'id' in restaurant
   }
+
 }
 
 export default FavoriteRestaurantIndexedDB
