@@ -1,4 +1,4 @@
-const createLikeButton = () => {
+const createlikeRestaurantButton = () => {
   return `
   <button aria-label="like this movie" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -6,4 +6,4 @@ const createLikeButton = () => {
 `
 }
 
-export default createLikeButton
+export default createlikeRestaurantButton

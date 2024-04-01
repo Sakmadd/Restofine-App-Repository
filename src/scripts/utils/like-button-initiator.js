@@ -1,6 +1,6 @@
 import FavoriteRestaurantIndexedDB from '../data/favRestaurantIndexedDB-source'
-import createLikeButton from '../views/components/detail/like-button'
-import createLikedButton from '../views/components/detail/liked-button'
+import createlikeRestaurantButton from '../views/components/detail/like-restaurant-button'
+import createUnlikedRestaurantButton from '../views/components/detail/unlike-restaurant-button'
 
 const LikeButtonInitiator = {
   async init ({ likeButtonContainer, restaurant }) {
@@ -26,7 +26,7 @@ const LikeButtonInitiator = {
   },
 
   _renderLike () {
-    this._likeButtonContainer.innerHTML = createLikeButton()
+    this._likeButtonContainer.innerHTML = createlikeRestaurantButton()
 
     const likeButton = document.querySelector('#likeButton')
     likeButton.addEventListener('click', async () => {
@@ -36,7 +36,7 @@ const LikeButtonInitiator = {
   },
 
   _renderLiked () {
-    this._likeButtonContainer.innerHTML = createLikedButton()
+    this._likeButtonContainer.innerHTML = createUnlikedRestaurantButton()
 
     const likeButton = document.querySelector('#likeButton')
     likeButton.addEventListener('click', async () => {

@@ -14,6 +14,7 @@
         "no-underscore-dangle": 0,
         "no-restricted-globals": 0,
         "linebreak-style": 0,
-        "accessor-pairs": 0
+        "accessor-pairs": 0,
+        "no-undef": 0
     }
 }
