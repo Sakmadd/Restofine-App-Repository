@@ -2,6 +2,9 @@ import API_ENDPOINT from '../globals/api-endpoint'
 
 const reviewFormInitiator = {
   init ({ restaurantId, submitReviewButton }) {
+    this._submitEvent(restaurantId, submitReviewButton)
+  },
+  _submitEvent (restaurantId, submitReviewButton) {
     submitReviewButton.addEventListener('click', event => {
       this._submitReview(restaurantId, event)
     })
@@ -16,15 +19,9 @@ const reviewFormInitiator = {
 
     fetch(API_ENDPOINT.ADD_REVIEW, {
       method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(customerReview)
-    }
-    )
-      .then(res => res.text())
-      .then(teks => console.log(teks))
-      .catch(err => console.log(err))
+    })
   }
 }
 export default reviewFormInitiator

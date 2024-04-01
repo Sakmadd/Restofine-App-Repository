@@ -11,13 +11,16 @@ const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
 
 const FavoriteRestaurantIndexedDB = {
   async getRestaurant (id) {
+    if (!id) {
+      return
+    }
     return (await dbPromise).get(OBJECT_STORE_NAME, id)
   },
   async getAllRestaurants () {
     return (await dbPromise).getAll(OBJECT_STORE_NAME)
   },
-  async putRestaurant (Restaurant) {
-    return (await dbPromise).put(OBJECT_STORE_NAME, Restaurant)
+  async putRestaurant (restaurant) {
+    return (await dbPromise).put(OBJECT_STORE_NAME, restaurant)
   },
   async deleteRestaurant (id) {
     return (await dbPromise).delete(OBJECT_STORE_NAME, id)
