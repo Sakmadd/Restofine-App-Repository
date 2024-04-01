@@ -6,7 +6,7 @@ const createReviewForm = () => {
     <input id="review-form__name" type="text" placeholder="Whats your Name?" >
     <label for="review-form__description">Review</label>
     <input id="review-form__description" type="text" placeholder="Tell us your experience!">
-    <input id="review-form__button" class="review-form__submit" type="submit" value="Submit!" >
+    <input id="review-form__button" class="review-form__submit inputUnsend" type="submit" value="Submit!" >
   </form>
     `
 }

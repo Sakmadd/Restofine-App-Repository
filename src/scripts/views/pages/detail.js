@@ -16,16 +16,19 @@ const Detail = {
   async afterRender () {
     const url = UrlParser.parseActiveUrlWithoutCombiner()
     const result = await RestaurantDbSource.detailRestaurant(url.id)
-    const restaurantId = result.restaurant.id
     const restaurant = result.restaurant
     const putMenu = document.querySelector('.information')
-    const restaurantDetail = document.createElement('restaurant-detail')
+    const restaurantDetailElement = document.createElement('restaurant-detail')
 
-    restaurantDetail.restaurant = result.restaurant
-    putMenu.appendChild(restaurantDetail)
+    restaurantDetailElement.restaurant = result.restaurant
+    putMenu.appendChild(restaurantDetailElement)
 
     const submitReviewButton = document.querySelector('#review-form__button')
-    reviewFormInitiator.init({ restaurantId, submitReviewButton })
+
+    reviewFormInitiator.init({
+      restaurant,
+      submitReviewButton
+    })
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),

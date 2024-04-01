@@ -450,6 +450,7 @@ section {
 		font-size: 20px;
 	}
 }
+
 input[type=text], select {
 	height: 44px;
 	width: 100%;
@@ -459,12 +460,8 @@ input[type=text], select {
 	border-radius: 10px;
 	box-sizing: border-box;
   }
-
-input[type=submit]:hover {
+.inputUnsend:hover {
   background-color: #45a049;
-}
-input[type=submit]:active {
-  background-color: #9ec9a0;
 }
 input[type=submit] {
 	height: 44px;
