@@ -24,6 +24,7 @@ const ReviewInitiator = {
         alert('Nama dan deskripsi review harus di isi yaa!')
         return
       }
+      this._sendingReview()
       this._fetchData(nameInput, descriptionInput)
     })
   },
@@ -53,11 +54,10 @@ const ReviewInitiator = {
     document.querySelector('.review-customer').replaceWith(newReviewsCustomer)
     document.getElementById('review-form__name').value = ''
     document.getElementById('review-form__description').value = ''
-    this._sendingReviewDone(this._submitButton)
+    this._sendingReviewDone()
   },
 
   async _fetchData (nameInput, descriptionInput) {
-    this._sendingReview(this._submitButton)
     const customerReview = {
       id: this._restaurant.id,
       name: nameInput,
