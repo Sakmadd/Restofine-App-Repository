@@ -32,6 +32,11 @@ class ReviewsCustomer extends HTMLElement {
       this.appendChild(reviewCustomerItem)
     })
   }
+
+  set _reloadReviews (restaurant) {
+    this._customerReviews = restaurant.customerReviews
+    this._render()
+  }
 }
 
 customElements.define('reviews-customer', ReviewsCustomer)

@@ -11,5 +11,14 @@ class RestaurantDbSource {
     const response = await fetch(API_ENDPOINT.DETAIL(id))
     return response.json()
   }
+
+  static async AddCustomerReview (customerReview) {
+    const response = fetch(API_ENDPOINT.ADD_REVIEW, {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
+      body: JSON.stringify(customerReview)
+    })
+    return response
+  }
 }
 export default RestaurantDbSource
