@@ -1,10 +1,8 @@
 import CONFIG from '../../../globals/config'
-import createReviewForm from './review-form'
 
 class RestaurantDetail extends HTMLElement {
   set restaurant (restaurant) {
     this._restaurant = restaurant
-    this._menus = restaurant.menus
     this.render()
   }
 
@@ -12,9 +10,8 @@ class RestaurantDetail extends HTMLElement {
     const image = document.createElement('img')
     const information = document.createElement('div')
     const review = document.createElement('div')
-    const informationTextElement = document.createElement('information-text')
-    const informationMenuElement = document.createElement('information-menus')
-    const reviewsCustomerElement = document.createElement('reviews-customer')
+    const informationText = document.createElement('information-text')
+    const informationMenu = document.createElement('information-menus')
 
     image.setAttribute('src', `${CONFIG.BASE_IMAGE_URL}${this._restaurant.pictureId}`)
     image.setAttribute('alt', `Restaurant ${this._restaurant.name}`)
@@ -24,19 +21,14 @@ class RestaurantDetail extends HTMLElement {
     information.classList.add('information')
     review.classList.add('review')
 
-    informationTextElement.restaurant = this._restaurant
-    informationMenuElement.menus = this._menus
-    reviewsCustomerElement.restaurant = this._restaurant
+    informationText.restaurant = this._restaurant
+    informationMenu.menus = this._restaurant.menus
 
     information.appendChild(image)
-    information.appendChild(informationTextElement)
-    information.appendChild(informationMenuElement)
-
-    review.appendChild(reviewsCustomerElement)
-    review.innerHTML += createReviewForm()
+    information.appendChild(informationText)
+    information.appendChild(informationMenu)
 
     this.appendChild(information)
-    this.appendChild(review)
   }
 }
 customElements.define('restaurant-detail', RestaurantDetail)

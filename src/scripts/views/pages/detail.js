@@ -1,7 +1,8 @@
 import RestaurantDbSource from '../../data/restaurantDB-source'
 import UrlParser from '../../routes/url-parser'
+import InformationInitiator from '../../utils/information-initiator'
 import LikeButtonInitiator from '../../utils/like-button-initiator'
-import reviewFormInitiator from '../../utils/review-form-initiator'
+import ReviewInitiator from '../../utils/review-initiator'
 
 const Detail = {
   async render () {
@@ -9,6 +10,7 @@ const Detail = {
         <section class="content">
             <div class="information">
             </div>
+            <div class="review"></div>
             <div id="likeButtonContainer"></div>
         </section> 
         `
@@ -17,17 +19,15 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner()
     const result = await RestaurantDbSource.detailRestaurant(url.id)
     const restaurant = result.restaurant
-    const putMenu = document.querySelector('.information')
-    const restaurantDetailElement = document.createElement('restaurant-detail')
 
-    restaurantDetailElement.restaurant = result.restaurant
-    putMenu.appendChild(restaurantDetailElement)
+    InformationInitiator.init({
+      informationContainer: document.querySelector('.information'),
+      restaurant
+    })
 
-    const submitReviewButton = document.querySelector('#review-form__button')
-
-    reviewFormInitiator.init({
-      restaurant,
-      submitReviewButton
+    ReviewInitiator.init({
+      reviewContainer: document.querySelector('.review'),
+      restaurant
     })
 
     LikeButtonInitiator.init({

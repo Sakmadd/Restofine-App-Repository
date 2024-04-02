@@ -8,7 +8,7 @@ class RestaurantContainer extends HTMLElement {
     this._restaurants.forEach((restaurant) => {
       const restaurantItem = document.createElement('restaurant-item')
       restaurantItem.restaurant = restaurant
-
+      this.classList.add('restaurant-item')
       this.appendChild(restaurantItem)
       this.classList.add('posts')
     })

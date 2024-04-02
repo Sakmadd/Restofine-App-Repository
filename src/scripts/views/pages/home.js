@@ -1,4 +1,5 @@
 import RestaurantDbSource from '../../data/restaurantDB-source'
+import RestaurantShowInitiator from '../../utils/restaurant-show-initiator'
 
 const Home = {
   async render () {
@@ -10,11 +11,11 @@ const Home = {
   },
   async afterRender () {
     const restaurants = await RestaurantDbSource.listRestaurant()
-    const containerSpace = document.querySelector('.content')
-    const restaurantContainer = document.createElement('restaurant-container')
-    restaurantContainer.restaurants = restaurants
-
-    containerSpace.appendChild(restaurantContainer)
+    const restaurantsContainer = document.querySelector('.content')
+    RestaurantShowInitiator.init({
+      restaurantsContainer,
+      restaurants
+    })
   }
 }
 export default Home
