@@ -12,9 +12,9 @@ class RestaurantDetail extends HTMLElement {
     const image = document.createElement('img')
     const information = document.createElement('div')
     const review = document.createElement('div')
-    const informationTextElement = document.createElement('information-text')
-    const informationMenuElement = document.createElement('information-menus')
-    const reviewsCustomerElement = document.createElement('reviews-customer')
+    const informationText = document.createElement('information-text')
+    const informationMenu = document.createElement('information-menus')
+    const reviewCustomer = document.createElement('reviews-customer')
 
     image.setAttribute('src', `${CONFIG.BASE_IMAGE_URL}${this._restaurant.pictureId}`)
     image.setAttribute('alt', `Restaurant ${this._restaurant.name}`)
@@ -24,15 +24,15 @@ class RestaurantDetail extends HTMLElement {
     information.classList.add('information')
     review.classList.add('review')
 
-    informationTextElement.restaurant = this._restaurant
-    informationMenuElement.menus = this._menus
-    reviewsCustomerElement.restaurant = this._restaurant
+    informationText.restaurant = this._restaurant
+    informationMenu.menus = this._menus
+    reviewCustomer.restaurant = this._restaurant
 
     information.appendChild(image)
-    information.appendChild(informationTextElement)
-    information.appendChild(informationMenuElement)
+    information.appendChild(informationText)
+    information.appendChild(informationMenu)
 
-    review.appendChild(reviewsCustomerElement)
+    review.appendChild(reviewCustomer)
     review.innerHTML += createReviewForm()
 
     this.appendChild(information)
