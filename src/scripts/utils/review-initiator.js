@@ -1,5 +1,4 @@
 import RestaurantDbSource from '../data/restaurantDB-source'
-import API_ENDPOINT from '../globals/api-endpoint'
 
 import createReviewForm from '../views/components/detail/review-form'
 
@@ -57,18 +56,14 @@ const ReviewInitiator = {
     this._sendingReviewDone(this._submitButton)
   },
 
-  _fetchData (nameInput, descriptionInput) {
+  async _fetchData (nameInput, descriptionInput) {
+    this._sendingReview(this._submitButton)
     const customerReview = {
       id: this._restaurant.id,
       name: nameInput,
       review: descriptionInput
     }
-    this._sendingReview(this._submitButton)
-    fetch(API_ENDPOINT.ADD_REVIEW, {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(customerReview)
-    })
+    await RestaurantDbSource.AddCustomerReview(customerReview)
       .then(response => {
         if (response.ok) {
           this._afterFetchData()
