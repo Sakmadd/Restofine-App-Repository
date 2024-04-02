@@ -1,0 +1,21 @@
+Feature('Liking Restaurant')
+
+Before(({ I }) => {
+  I.amOnPage('/#/')
+})
+Scenario('Adding Restaurant Review', ({ I }) => {
+  I.amOnPage('/')
+  I.seeElement('.post-item__title')
+  const firstRestaurant = locate('.post-item__title a').first()
+  I.click(firstRestaurant)
+  I.seeElement('#review-form__name')
+  I.seeElement('#review-form__description')
+  I.fillField('#review-form__name', 'John Doe')
+  I.fillField('#review-form__description', 'Great food and service!')
+  I.click('#review-form__button')
+  I.amOnPage('/')
+  I.seeElement('.post-item__title')
+  I.click(firstRestaurant)
+  I.see('John Doe', '.review-customer-item__name')
+  I.see('Great food and service!', '.review-customer-item__description')
+})

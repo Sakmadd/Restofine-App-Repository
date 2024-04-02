@@ -3,3 +3,4 @@ webpack.dev.js
 webpack.prod.js
 jest.config.js
 babel.config.js
+codecept.conf.js
