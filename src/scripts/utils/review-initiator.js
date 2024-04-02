@@ -1,15 +1,23 @@
 import RestaurantDbSource from '../data/restaurantDB-source'
 import API_ENDPOINT from '../globals/api-endpoint'
 
-const reviewFormInitiator = {
-  init ({ restaurant, submitReviewButton }) {
+import createReviewForm from '../views/components/detail/review-form'
+
+const ReviewInitiator = {
+  init ({ restaurant, reviewContainer }) {
+    this._container = reviewContainer
     this._restaurant = restaurant
-    this._submitButton = submitReviewButton
+    this._renderReview(this._container)
+  },
+  _renderReview (container) {
+    const reviewsCustomerElement = document.createElement('reviews-customer')
+    reviewsCustomerElement.restaurant = this._restaurant
+    container.appendChild(reviewsCustomerElement)
+    container.innerHTML += createReviewForm()
     this._submitEvent()
   },
-
   _submitEvent () {
-    this._submitButton.addEventListener('click', event => {
+    document.querySelector('#review-form__button').addEventListener('click', event => {
       event.stopPropagation()
       const nameInput = document.getElementById('review-form__name').value
       const descriptionInput = document.getElementById('review-form__description').value
@@ -20,13 +28,22 @@ const reviewFormInitiator = {
       this._fetchData(nameInput, descriptionInput)
     })
   },
-
-  _sendingReview (submitReviewButton) {
+  _sendingReview () {
+    const submitReviewButton = document.querySelector('#review-form__button')
     submitReviewButton.disabled = true
     submitReviewButton.style.cursor = 'alias'
     submitReviewButton.classList.toggle('inputUnsend')
     submitReviewButton.value = 'Mengirim Review'
     submitReviewButton.disabled = true
+  },
+
+  _sendingReviewDone () {
+    const submitReviewButton = document.querySelector('#review-form__button')
+    submitReviewButton.disabled = false
+    submitReviewButton.style.cursor = 'default'
+    submitReviewButton.classList.toggle('inputUnsend')
+    submitReviewButton.value = 'submit'
+    submitReviewButton.disabled = false
   },
 
   async _afterFetchData () {
@@ -40,21 +57,12 @@ const reviewFormInitiator = {
     this._sendingReviewDone(this._submitButton)
   },
 
-  _sendingReviewDone (submitReviewButton) {
-    submitReviewButton.disabled = false
-    submitReviewButton.style.cursor = 'default'
-    submitReviewButton.classList.toggle('inputUnsend')
-    submitReviewButton.value = 'submit'
-    submitReviewButton.disabled = false
-  },
-
   _fetchData (nameInput, descriptionInput) {
     const customerReview = {
       id: this._restaurant.id,
       name: nameInput,
       review: descriptionInput
     }
-
     this._sendingReview(this._submitButton)
     fetch(API_ENDPOINT.ADD_REVIEW, {
       method: 'POST',
@@ -73,4 +81,4 @@ const reviewFormInitiator = {
       })
   }
 }
-export default reviewFormInitiator
+export default ReviewInitiator
