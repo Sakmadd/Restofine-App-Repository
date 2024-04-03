@@ -2,14 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FFF"/>
-    <title>RESTOFINE</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
-    <link rel="icon" href="/images/favicon.png">
-    <link rel="manifest" href="./app.webmanifest">
-    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+  <meta name="description" content="Ingin menemukan pengalaman bersantap terbaik? RESTOFINE membantu Anda menemukan restoran terbaik di area Anda. Baca review dan bandingkan harga sebelum Anda pergi!" />
+  <meta name="keywords" content="restoran terbaik, temukan restoran, reservasi restoran, review restoran" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Ahmad Safi'i" />
+  <title>RESTOFINE</title>
+  <meta property="og:title" content="RESTOFINE - Temukan Restoran Terbaik di Area Anda" />
+  <meta property="og:description" content="Ingin menemukan pengalaman bersantap terbaik? RESTOFINE membantu Anda menemukan restoran terbaik di area Anda. Baca review dan bandingkan harga sebelum Anda pergi!" />
+  <meta property="og:image" content="https://www.example.com/logo.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+  <link rel="icon" href="/images/favicon.png">
+  <link rel="manifest" href="./app.webmanifest">
+  <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
   </head>
   <body>
     <a href="#mainContent" class="skip-link">Menuju ke konten</a>
@@ -35,8 +40,15 @@
     </header>
 
     <div class="hero">
+      <picture class="hero__image">
+        <source media="(max-width: 400px)" srcset="../images/hero_ugnq34_c_scale,w_460.jpg">
+        <source media="(max-width: 720px)" srcset="../images/hero_ugnq34_c_scale,w_974.jpg">
+        <img
+        src="../images/hero_ugnq34_c_scale,w_1339.jpg"
+        alt="hero image">
+        </picture>
       <div class="hero__inner">
-        <h1 class="hero__title">Find Finest Restaurant</h1>
+        <h2 class="hero__title">Find Finest Restaurant</h2>
         <p class="hero__tagline">
           In Your Area!
         </p>
@@ -48,10 +60,8 @@
     </main>
 
     <footer>
-      <ul>
         <p>Built with ❤️ by Ahmad Safi'i</p>
         <p class="end">© Copyright 2023</p>
-      </ul>
     </footer>
   </body>
 </html>
