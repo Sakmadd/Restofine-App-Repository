@@ -2,9 +2,10 @@ const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -19,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.s[ac]ss$/i,
-        use: [
+        use: [MiniCssExtractPlugin.loader,
           "style-loader",
           "css-loader",
           "sass-loader",
@@ -28,11 +29,13 @@ module.exports = {
     ],
   },
   optimization: {
-    minimizer: [new UglifyJsPlugin()],
+    minimizer: [
+      new CssMinimizerPlugin()
+    ],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
-      maxSize: 70000,
+      maxSize: 80000,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
@@ -87,5 +90,6 @@ module.exports = {
       ],
     }),
     new BundleAnalyzerPlugin(),
+    new MiniCssExtractPlugin(),
   ],
 };
