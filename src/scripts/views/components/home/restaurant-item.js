@@ -11,7 +11,7 @@ class RestaurantItem extends HTMLElement {
         <article class="post-item">
               <div class="post-item__thumbnail">
                 <h3 class="ratings" tabindex="0">★ ${this._restaurant.rating}</h3>
-                <img  src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" class="post-item__image"  alt="Restoran ${this._restaurant.name}" />
+                <img data-src="${CONFIG.BASE_IMAGE_URL + this._restaurant.pictureId}" class="post-item__image lazyload"  alt="Restoran ${this._restaurant.name}" />
                 <a href="/#/detail/${this._restaurant.id}" class="callToAction">SEE DETAILS</a>
                 </div>
               <div class="post-item__content">
