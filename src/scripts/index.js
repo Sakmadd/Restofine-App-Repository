@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+import './data/restaurantDB-source'
+import './data/favRestaurantIndexedDB-source'
 import 'regenerator-runtime'
 import '../styles/main.scss'
 import '../styles/responsive.scss'
