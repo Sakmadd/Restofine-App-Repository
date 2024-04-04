@@ -13,9 +13,10 @@ class RestaurantDetail extends HTMLElement {
     const informationText = document.createElement('information-text')
     const informationMenu = document.createElement('information-menus')
 
-    image.setAttribute('src', `${CONFIG.BASE_IMAGE_URL}${this._restaurant.pictureId}`)
+    image.setAttribute('data-src', `${CONFIG.BASE_IMAGE_URL}${this._restaurant.pictureId}`)
     image.setAttribute('alt', `Restaurant ${this._restaurant.name}`)
     image.setAttribute('tabindex', 0)
+    image.classList.add('lazyload')
     image.classList.add('information__image')
 
     information.classList.add('information')
