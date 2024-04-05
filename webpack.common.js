@@ -5,7 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -20,7 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader,
+        use: [
           "style-loader",
           "css-loader",
           "sass-loader",
@@ -29,9 +28,6 @@ module.exports = {
     ],
   },
   optimization: {
-    minimizer: [
-      new CssMinimizerPlugin()
-    ],
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
