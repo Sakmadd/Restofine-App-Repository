@@ -47,11 +47,15 @@ module.exports = {
         },
       },
     },
-
+  },
+  resolve: {
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, 'src/scripts/data')
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(),
-
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -83,6 +87,5 @@ module.exports = {
         },
       ],
     }),
-,
   ],
 };
