@@ -1,4 +1,4 @@
-import RestaurantDbSource from '../data/restaurantDB-source'
+import RestaurantDbSource from '../data/restaurantDB-source.js'
 
 import createReviewForm from '../views/components/detail/review-form'
 

@@ -1,4 +1,4 @@
-import RestaurantDbSource from '../../data/restaurantDB-source'
+import RestaurantDbSource from '../../data/restaurantDB-source.js'
 import UrlParser from '../../routes/url-parser'
 import InformationInitiator from '../../utils/information-initiator'
 import LikeButtonInitiator from '../../utils/like-button-initiator'
