@@ -6,7 +6,8 @@ const Favorited = {
     return `
     <section class="content">
       <h2 tabindex="0">Favorited Restaurant</h2>
-      <div class="posts"></div>
+      <div class="posts">
+      </div>
     </section> 
     `
   },
