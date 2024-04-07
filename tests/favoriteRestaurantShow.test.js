@@ -29,7 +29,7 @@ describe('Showing all favorite restaurants', () => {
       })
       expect(FavoriteRestaurantIndexedDB.getAllRestaurants).toHaveBeenCalledTimes(1)
     })
-    it('should show the information that no movies have been liked', () => {
+    it('should show the information that no restaurants have been liked', () => {
       const restaurants = []
       FavoritedRestaurantInitiator.init({
         restaurantContainer: document.querySelector('.content'),
@@ -39,7 +39,7 @@ describe('Showing all favorite restaurants', () => {
     })
   })
   describe('when theres restaurants have been liked', () => {
-    it('should render the movies', () => {
+    it('should render the restaurants', () => {
       const restaurants = [
         {
           id: 'rqdv5juczeskfw1e867',
