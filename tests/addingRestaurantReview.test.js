@@ -1,4 +1,4 @@
-import RestaurantDbSource from '../src/scripts/data/restaurantDB-source.js'
+import RestaurantDbSource from '../src/scripts/data/restaurantDB-source'
 import API_ENDPOINT from '../src/scripts/globals/api-endpoint'
 import ReviewInitiator from '../src/scripts/utils/review-initiator'
 
