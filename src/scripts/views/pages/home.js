@@ -1,4 +1,4 @@
-import RestaurantDbSource from '../../../scripts/data/restaurantDB-source'
+import RestaurantDbSource from '../../../../src/scripts/data/restaurantDB-source'
 import RestaurantShowInitiator from '../../utils/restaurant-show-initiator'
 import renderSkeletonItems from '../components/home/renderSkeleton'
 

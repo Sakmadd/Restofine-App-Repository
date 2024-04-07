@@ -1,4 +1,4 @@
-import RestaurantDbSource from '../../../scripts/data/restaurantDB-source'
+import RestaurantDbSource from '../../../../src/scripts/data/restaurantDB-source'
 import UrlParser from '../../routes/url-parser'
 import InformationInitiator from '../../utils/information-initiator'
 import LikeButtonInitiator from '../../utils/like-button-initiator'
